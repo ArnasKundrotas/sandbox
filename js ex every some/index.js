@@ -80,9 +80,9 @@ if (a.some(e => typeof e !== "number") ||
     c.some(e => typeof e !== "number") ||
     d.some(e => typeof e !== "number")
 ) console.log("Some elements are not numbers");
-//-----------------------------------
-//-----------------------------------
+
 console.log("---------------------------");
+//-----------------------------------
 
 
 const arrayCheck = inputArray => {
@@ -96,3 +96,40 @@ console.log(arrayCheck(a));
 console.log(arrayCheck(b));
 console.log(arrayCheck(c));
 console.log(arrayCheck(d));
+
+console.log("---------------------------");
+//-----------------------------------
+const a1 = [1,2,3];
+const b1 = [1,2,3];
+const c1 = [2,1,3];
+const d1 = [1,2,3,4];
+
+console.log(a1 === b1); // false // different arrays hold different POINTERS in memory different
+
+// if true && true
+const arrayEqualCheck = (arr1, arr2) => arr1.length === arr2.length && arr1.every((e, i) => e === arr2[i]);
+
+const arrayEqualCheckStringify = (arr1, arr2) => JSON.stringify.arr1 === JSON.stringify.arr2;
+
+console.log("-------------Array Check------------");
+console.log(arrayEqualCheck(a1, b1)); // true && true -> true
+console.log(arrayEqualCheck(a1, c1)); // true && false -> false
+console.log(arrayEqualCheck(a1, d1)); // false && false -> false
+
+console.log("-------------string && string---------");
+if ("abc" && "afg") { console.log("true"); }else{ console.log("false");
+}
+
+console.log("-------------Stringify--------------");
+console.log(arrayEqualCheckStringify(a1, b1)); // true
+console.log(arrayEqualCheckStringify(a1, c1)); // true
+console.log(arrayEqualCheckStringify(a1, d1)); // true
+console.log("---------------------------");
+//-----------------------------------
+const transport = ["Bus", "Car", "Bicycle", "Airplane"];
+
+const elementFound = (inputArray, searchElement) => inputArray.some(e => e === searchElement);
+
+console.log(elementFound(transport, "Bus")); // true
+console.log(elementFound(transport, "Phone")); // false
+console.log(elementFound(transport, "Airplane")); // true
